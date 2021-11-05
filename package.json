@@ -1,0 +1,25 @@
+{
+  "name": "@eyecuvision/middlewares",
+  "version": "1.0.0",
+  "description": "Collection of ExpressJS middlewares",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eyecuvision/middlewares.git"
+  },
+  "keywords": [
+    "middleware"
+  ],
+  "author": "Oguz Vuruskaner",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eyecuvision/middlewares/issues"
+  },
+  "homepage": "https://github.com/eyecuvision/middlewares#readme",
+  "devDependencies": {
+    "jest": "^27.3.1"
+  }
+}
