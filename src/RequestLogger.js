@@ -1,4 +1,5 @@
-
+const path = require("path")
+const fs = require("fs")
 const {createRollingFileLogger} = require("simple-node-logger")
 
 const RequestLogger = (options = {}) => {
@@ -10,7 +11,14 @@ const RequestLogger = (options = {}) => {
             fileNamePattern:'roll-<DATE>.log',
             dateFormat:'YYYY.MM.DD'
     },options)
+
+    if(!path.exists("logs")){
+        fs.mkdirSync("logs", { recursive: true })
+    }
+    
     logger = createRollingFileLogger(finalOptions)
+
+
     const inner = (request,response,next) => {
         const requestStart = Date.now();
 
