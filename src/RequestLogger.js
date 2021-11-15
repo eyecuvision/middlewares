@@ -1,4 +1,3 @@
-const path = require("path")
 const fs = require("fs")
 const {createRollingFileLogger} = require("simple-node-logger")
 
@@ -12,7 +11,7 @@ const RequestLogger = (options = {}) => {
             dateFormat:'YYYY.MM.DD'
     },options)
 
-    if(!path.exists("logs")){
+    if(!fs.existsSync("logs")){
         fs.mkdirSync("logs", { recursive: true })
     }
     
