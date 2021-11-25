@@ -11,13 +11,13 @@ const RequestLogger = (options = {}) => {
             dateFormat:'YYYY.MM.DD'
     },options)
 
-    if(!fs.existsSync("logs")){
-        fs.mkdirSync("logs", { recursive: true })
+    let {logDirectory} = finalOptions
+
+    if(!fs.existsSync(logDirectory)){
+        fs.mkdirSync(logDirectory,{recursive:true})
     }
-    
+
     logger = createRollingFileLogger(finalOptions)
-
-
     const inner = (request,response,next) => {
         const requestStart = Date.now();
 
