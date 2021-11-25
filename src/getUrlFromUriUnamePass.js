@@ -2,7 +2,7 @@ const config = require("./protocolConfig")
 
 
 module.exports = (address,username,password) => {
-    address = address.replace(" ","")
+    address = address.replace("]","").replace("[","").replace(" ","").replace("\t","").replace("\n","").replace("\r","")
     let [protocol,uri] = address.split("://",2)
     let [ipAddr,port = ""] = uri.split(":",2)
     let route 
